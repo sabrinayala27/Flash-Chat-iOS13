@@ -6,7 +6,9 @@
 //  Copyright © 2019 Angela Yu. All rights reserved.
 //
 
+import FirebaseCore
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
@@ -15,6 +17,17 @@ class LoginViewController: UIViewController {
     
 
     @IBAction func loginPressed(_ sender: UIButton) {
+        if  let email = emailTextfield.text, let password = passwordTextfield.text {
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                guard self != nil else { return }
+                if let e = error {
+                    print(e.localizedDescription)
+                } else {
+                    //Navigate to the view controller
+                    self?.performSegue(withIdentifier: K.loginSegue , sender: self)
+                }
+            }
+        }
     }
     
 }
