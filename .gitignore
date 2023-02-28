@@ -1,0 +1,8 @@
+#Pod files ignore
+
+Podfile
+Podfile.lock
+Pods
+
+*.lock
+.Ds_Store
