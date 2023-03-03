@@ -1,55 +1,79 @@
-![App Brewery Banner](Documentation/AppBreweryBanner.png)
-
-# Flash-Chat
-
-## Our Goal
-
-One of the most fundamental component of modern iOS apps is the Table View. Table Views are used everywhere from the Mail app to the Messages app. It’s a crucial part of every iOS developer’s tool belt. In this tutorial we’ll be getting to grips with Table Views, creating custom cells, and making our own cloud-based backend database. It’s going to be epic, so buckle up.
-
-## What you will create
-
-Flash Chat is an internet based messaging app similar to WhatsApp, the popular messaging app that was bought by Facebook for $22 billion. We will be using a service called Firebase Firestore as a backend database to store and retrieve our messages from the cloud. 
-
-## What you will learn
-
-* How to integrate third party libraries in your app using Cocoapods and Swift Package Manager.
-* How to store data in the cloud using Firebase Firestore.
-* How to query and sort the Firebase database.
-* How to use Firebase for user authentication, registration and login.
-* How to work with UITableViews and how to set their data sources and delegates.
-* How to create custom views using .xib files to modify native design components.
-* How to embed View Controllers in a Navigation Controller and understand the navigation stack.
-* How to create a constants file and use static properties to store Strings and other constants.
-* Learn about Swift loops and create animations using loops.
-* Learn about the App Lifecycle and how to use viewWillAppear or viewWillDisappear.
-* How to create direct Segues for navigation.
+# Flash-Chat :e-mail: 
 
 
-# Constants
-```
-struct K {
-    static let cellIdentifier = "ReusableCell"
-    static let cellNibName = "MessageCell"
-    static let registerSegue = "RegisterToChat"
-    static let loginSegue = "LoginToChat"
-    
-    struct BrandColors {
-        static let purple = "BrandPurple"
-        static let lightPurple = "BrandLightPurple"
-        static let blue = "BrandBlue"
-        static let lighBlue = "BrandLightBlue"
-    }
-    
-    struct FStore {
-        static let collectionName = "messages"
-        static let senderField = "sender"
-        static let bodyField = "body"
-        static let dateField = "date"
-    }
+#### Uno de los componentes más fundamentales de las aplicaciones iOS modernas es `table view` y se utilizan en todas partes, desde la aplicación Correo hasta la aplicación Mensajes. En este tutorial, nos familiarizaremos con `table view`, crearemos celdas personalizadas y crearemos nuestra propia base de datos de back-end basada en la nube. 
+
+
+
+------------
+
+
+
+##proyecto 📋
+
+###### Flash Chat es una aplicación de mensajería basada en Internet similar a WhatsApp, la popular aplicación de mensajería que fue comprada por Facebook por $ 22 mil millones. Usaremos un servicio llamado Firebase Firestore como base de datos de back-end para almacenar y recuperar nuestros mensajes de la nube.
+
+
+------------
+
+
+
+### Patrón de diseño ⚙️
+##### Model View Controller (MVC).
+
+#### Model 📘
+
+###### Esta estructura "Message" nos permite darle las propiedades que un mensaje debería tener, sera el modelo para crear mensajes.
+```swift
+
+struct Message {
+    let sender: String
+    let body: String
 }
 
 ```
 
->This is a companion project to The App Brewery's Complete App Developement Bootcamp, check out the full course at [www.appbrewery.co](https://www.appbrewery.co/)
+#### View 💻
+- Cómo crear Segues directos para la navegación.
+- Obtenga información sobre el ciclo de vida de la aplicación y cómo usar viewWillAppear o viewWillDisappear.
+- Cómo crear vistas personalizadas usando archivos .xib para modificar componentes de diseño nativos.
+```swift
+  //registro de tableView XIB
+        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
+        
+        loadMessages()
+    }
+```
 
-![End Banner](Documentation/readme-end-banner.png)
+#### Controller ⌨️
+- Cómo incrustar controladores de vista en un controlador de navegación y comprender la pila de navegación.
+- Cómo crear un archivo de constantes y usar propiedades estáticas para almacenar cadenas y otras constantes.
+- Aprenda sobre los bucles de Swift y cree animaciones usando bucles.
+- Cómo trabajar con UITableViews y cómo configurar sus fuentes de datos y delegados.
+
+```swift
+ // tableView.delegate = self
+        tableView.dataSource = self
+        title = K.appTitle
+        navigationItem.hidesBackButton = true
+```
+
+
+
+
+
+## Pods utilizados 🛠️
+##### aprendimos 
+1. Cómo integrar bibliotecas de terceros en la aplicación utilizando Cocoapods y Swift Package Manager.
+[![Cocoapods & SPM](https://miro.medium.com/max/970/1*inPWoPOH82PnlrpI5A_DJw.png "Cocoapods & SPM")](https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.devgenius.io%2Fios-library-support-both-cocoapods-and-swift-package-manager-983c81b35080&psig=AOvVaw3Tj0W9Z1RIYu6hiEQkpbyZ&ust=1677935635579000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCIDk3L3rv_0CFQAAAAAdAAAAABAE "Cocoapods & SPM")
+
+
+2. Cómo almacenar datos en la nube usando Firebase Firestore.
+3. Cómo consultar y ordenar la base de datos de Firebase.
+4. Cómo usar Firebase para la autenticación, el registro y el inicio de sesión de los usuarios.
+
+#### Para la instalación de los pods se utilizo CocoaPods.
+- [CLTypingLabel ](https://cocoapods.org/pods/CLTypingLabel "CLTypingLabel ")
+- [Firebase Firestore ](https://cocoapods.org/pods/FirebaseAuth "Firebase Firestore ")
+- [FirebaseAuth](https://cocoapods.org/pods/FirebaseFirestore "FirebaseAuth")
+- [IQKeyboardManagerSwift](https://cocoapods.org/pods/IQKeyboardManagerSwift "IQKeyboardManagerSwift")
