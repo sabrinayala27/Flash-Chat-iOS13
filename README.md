@@ -1,7 +1,7 @@
 # Flash-Chat :e-mail: 
 
 
-#### Uno de los componentes más fundamentales de las aplicaciones iOS modernas es `table view` y se utilizan en todas partes, desde la aplicación Correo hasta la aplicación Mensajes. En este tutorial, nos familiarizaremos con `table view`, crearemos celdas personalizadas y crearemos nuestra propia base de datos de back-end basada en la nube. 
+#### Uno de los componentes más fundamentales de las aplicaciones iOS modernas es `table view` y se utilizan en todas partes, desde la aplicación Correo hasta la aplicación Mensajes. En este proyecto, nos familiarizaremos con `table view`, crearemos celdas personalizadas y crearemos nuestra propia base de datos de back-end basada en la nube. 
 
 
 
@@ -35,7 +35,7 @@ struct Message {
 
 #### View 💻
 - Cómo crear Segues directos para la navegación.
-- Obtenga información sobre el ciclo de vida de la aplicación y cómo usar viewWillAppear o viewWillDisappear.
+- Obtener información sobre el ciclo de vida de la aplicación y cómo usar `viewWillAppear` o `viewWillDisappear`.
 - Cómo crear vistas personalizadas usando archivos .xib para modificar componentes de diseño nativos.
 ```swift
   //registro de tableView XIB
@@ -66,7 +66,6 @@ struct Message {
 ##### aprendimos 
 1. Cómo integrar bibliotecas de terceros en la aplicación utilizando Cocoapods y Swift Package Manager.
 [![Cocoapods & SPM](https://miro.medium.com/max/970/1*inPWoPOH82PnlrpI5A_DJw.png "Cocoapods & SPM")](https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.devgenius.io%2Fios-library-support-both-cocoapods-and-swift-package-manager-983c81b35080&psig=AOvVaw3Tj0W9Z1RIYu6hiEQkpbyZ&ust=1677935635579000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCIDk3L3rv_0CFQAAAAAdAAAAABAE "Cocoapods & SPM")
-
 
 2. Cómo almacenar datos en la nube usando Firebase Firestore.
 3. Cómo consultar y ordenar la base de datos de Firebase.
